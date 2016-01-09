@@ -188,28 +188,25 @@ way the Twitter network functions.
         \textit{Metric} & \textit{Network} & \textit{Value} \\ \hline
         \multirow{3}{*}{Network Type} & 12/11-12/2014 & Undirected \\
                                       & 12/24/2014 & Undirected \\
-                                      & 12/25-25/2014 & Undirected \\ \hline
+                                      & 12/25-26/2014 & Undirected \\ \hline
         \multirow{3}{*}{Number of Nodes} & 12/11-12/2014 & 301 \\
                                       & 12/24/2014 & 263 \\
-                                      & 12/25-25/2014 & 388 \\ \hline
-        \multirow{3}{*}{Number of Nodes} & 12/11-12/2014 & 301 \\
-                                      & 12/24/2014 & 263 \\
-                                      & 12/25-25/2014 & 388 \\ \hline
+                                      & 12/25-26/2014 & 388 \\ \hline
         \multirow{3}{*}{Number of Edges} & 12/11-12/2014 & 7 742 \\
                                       & 12/24/2014 & 6 689 \\
-                                      & 12/25-25/2014 & 10 609 \\ \hline
+                                      & 12/25-26/2014 & 10 609 \\ \hline
         \multirow{3}{*}{Average Degree} & 12/11-12/2014 & 51.442 \\
                                       & 12/24/2014 & 50.87 \\
-                                      & 12/25-25/2014 & 54.686 \\ \hline
+                                      & 12/25-26/2014 & 54.686 \\ \hline
         \multirow{3}{*}{Network Density} & 12/11-12/2014 & 0.171 \\
                                       & 12/24/2014 & 0.194 \\
-                                      & 12/25-25/2014 & 0.141 \\ \hline
+                                      & 12/25-26/2014 & 0.141 \\ \hline
         \multirow{3}{*}{Diameter} & 12/11-12/2014 & 4 \\
                                       & 12/24/2014 & 2 \\
-                                      & 12/25-25/2014 & 4 \\ \hline
+                                      & 12/25-26/2014 & 4 \\ \hline
         \multirow{3}{*}{Connected Components} & 12/11-12/2014 & 1 \\
                                       & 12/24/2014 & 3 \\
-                                      & 12/25-25/2014 & 2 \\ \hline
+                                      & 12/25-26/2014 & 2 \\ \hline
     \end{tabular}
 \end{center}
 %
@@ -247,7 +244,7 @@ determining communities with a 1.0 modularity.
 %
 \begin{figure}
 \centering
-\includegraphics[width=0.7\textwidth]{interview-facebook-communities.png}
+\includegraphics[width=0.6\textwidth]{interview-facebook-communities.png}
 \caption{Communities in the Fruchterman-Reingold layout for the Facebook network
     of The Interview
 \label{fig:interview-facebook-communities}}
@@ -281,5 +278,181 @@ liked or commented on more than one.
 \label{fig:interview-facebook-cc}}
 \end{figure}
 %
+\subsection{The Hobbit - the Twitter Network}
+\subsubsection{Raw Results}
+\begin{center}
+    \begin{tabular}{ l | c }
+        \hline
+        \textit{Metric} & \textit{Value} \\ \hline
+        Network Type & Directed \\ \hline
+        Number of Nodes & 2 646 \\ \hline
+        Number of Edges & 2 908 \\ \hline
+        Average Degree & 1.099 \\ \hline
+        Network Density & 0 \\ \hline
+        Diameter & 2 \\ \hline
+        Connected Components & 5 \\
+        \hline
+    \end{tabular}
+\end{center}
+%
+\subsubsection{Betweenness Centrality}
+We have again used the Fruchterman-Reingold Algorithm in order to produce a nice
+visual network of all the data we have gathered from Twitter. Figure
+\ref{fig:hobbit-twitter-betweennes-centrality} shows the Fruchterman-Reingold
+layout of the directed Twitter network. The nodes with the highest betweenness
+centrality have been enlarged. This Twitter network has a similar visual
+structure as the previous one. We can easily see on the margin of the circle
+users whose posts get retweeted only once. However, in the center of the circle,
+there is quite a dense network of users that got their tweets shared multiple
+times in a row.
+%
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{hobbit-twitter-betweennes-centrality.png}
+\caption{Highest betweenness centrality in the Fruchterman-Reingold layout for
+the Twitter network of The Hobbit
+\label{fig:hobbit-twitter-betweennes-centrality}}
+\end{figure}
+%
+The nodes with the greatest betweenness centrality correspond to users like The
+Hobbit Movies UK, The Hobbit, Major Cineplex (an operator of movie theaters in
+Thailand) again the Variety magazine and a user named Marlin Stolsig, which we
+could not identify. Unlike the Twitter network of 'The Interview', the most
+popular users in this network are spread across the world and are not only
+localized in the US.
+%
+\subsubsection{Communities in the Network}
+Figure \ref{fig:hobbit-twitter-communities} shows the network colored based on
+different communities and the users with the highest numbers of followers have
+been enlarged. These results have been yielded when determining communities with
+a 20.0 modularity (we wanted to highlight only the most important communities).
+%
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{hobbit-twitter-communities.png}
+\caption{Communities in the Fruchterman-Reingold layout for the Twitter network
+    of The Hobbit
+\label{fig:hobbit-twitter-communities}}
+\end{figure}
+%
+\subsection{The Hobbit - the Facebook Network}
+\subsubsection{Raw Results}
+\begin{center}
+    \begin{tabular}{ l | c | c }
+        \hline
+        \textit{Metric} & \textit{Network} & \textit{Value} \\ \hline
+        \multirow{3}{*}{Network Type} & 12/01-02/2014 & Undirected \\
+                                      & 12/04-09/2014 & Undirected \\
+                                      & 12/10-12/2014 & Undirected \\ \hline
+        \multirow{3}{*}{Number of Nodes} & 12/01-02/2014 & 468 \\
+                                      & 12/04-09/2014 & 854 \\
+                                      & 12/10-12/2014 & 290 \\ \hline
+        \multirow{3}{*}{Number of Edges} & 12/01-02/2014 & 12 299 \\
+                                      & 12/04-09/2014 & 23 251 \\
+                                      & 12/10-12/2014 & 7 110 \\ \hline
+        \multirow{3}{*}{Average Degree} & 12/01-02/2014 & 52.56 \\
+                                      & 12/04-09/2014 & 54.452 \\
+                                      & 12/10-12/2014 & 49.034 \\ \hline
+        \multirow{3}{*}{Network Density} & 12/01-02/2014 & 0.113 \\
+                                      & 12/04-09/2014 & 0.046 \\
+                                      & 12/10-12/2014 & 0.17 \\ \hline
+        \multirow{3}{*}{Diameter} & 12/01-02/2014 & 3 \\
+                                      & 12/04-09/2014 & 5 \\
+                                      & 12/10-12/2014 & 2 \\ \hline
+        \multirow{3}{*}{Connected Components} & 12/01-02/2014 & 5 \\
+                                      & 12/04-09/2014 & 2 \\
+                                      & 12/10-12/2014 & 3 \\ \hline
+    \end{tabular}
+\end{center}
+%
+\subsubsection{Betweenness Centrality}
+We have used the Fruchterman-Reingold Algorithm so as to produce a visual
+representation of the network in time. Figure
+\ref{fig:hobbit-facebook-betweennes-centrality} shows the Fruchterman-Reingold
+layout of the undirected Facebook network. As both the metrics and the
+visualizations suggest, the three instances of the network are different from
+one another: we can see that the first two networks are more “connected” than
+the last one, meaning that in the first two networks (and more in the second
+than in the first), there are many users who have liked or commented on more
+than one post, so the clusters that have formed around each post are linked to
+one another. Let us not forget that the movie has premiered in London and Paris
+on the 1st and 2nd of December, then during the 4th and 9th it has premiered in
+the US and between the 10th and 12th it has been released in other parts of
+Europe. The three networks built around these dates might suggest that The
+Hobbit was more popular in the US than in Europe.
+%
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{hobbit-facebook-betweennes-centrality.png}
+\caption{Highest betweenness centrality in the Fruchterman-Reingold layout for
+the Facebook network of The Hobbit
+\label{fig:hobbit-facebook-betweennes-centrality}}
+\end{figure}
+%
+We can also notice that the "brokers" in the second network are smaller in size,
+which means that less shortest paths pass through them than in the other
+networks. This happens because there are more central nodes in the second
+network than in the other two, so "the traffic" is split among them. Again, this
+suggests that the Facebook page of the movie has become more popular during the
+release dates in the US than in Europe.
+%
+\subsubsection{Communities in the Network}
+Figure \ref{fig:hobbit-facebook-communities} shows the network colored based on
+different communities and the users with the highest highest betweenness
+centrality have been enlarged. These results have been yielded when determining
+communities with a 1.0 modularity.
+%
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{hobbit-facebook-communities.png}
+\caption{Communities in the Fruchterman-Reingold layout for the Facebook network
+    of The Hobbit
+\label{fig:hobbit-facebook-communities}}
+\end{figure}
+%
+Just like the networks for the movie The Interview, the communities here are
+very well defined and very well separated from one another. This time, however
+we can see some differences between the three networks: for the first and
+second graph, the communities have engulfed more than one post (which again
+proves how popular the page was during this time frame); the third network,
+however is smaller and the communities are only defined around single posts,
+with a few brokers between them.
+%
+\subsubsection{Connected Components}
+The connected components are displayed in figure \ref{fig:hobbit-facebook-cc}.
+We can see that the first and the third network contain five, respectively three
+connected components, whereas the second one contains only two.
+%
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{hobbit-facebook-cc.png}
+\caption{Connected components in the Fruchterman-Reingold layout for the
+    Facebook network of The Hobbit
+\label{fig:hobbit-facebook-cc}}
+\end{figure}
+%
+\section{Conclusions}
+The analysis of the four networks was based on data collected from the Facebook
+and Twitter social web pages. However much we have strived, we could not import
+all the data we desired to, due to the limitations of the existing tools and
+APIs. Therefore, the graphs we have obtained are smaller than in reality. We
+tried as much as possible to improve the quality of the data, by querying the
+most popular tweets on Twitter and retrieving data from the release days on
+Facebook.
+
+There are several differences between the networks we have analysed and we have
+highlighted these in the previous paragraphs. The most important would be: while
+the Twitter networks are directed, the Facebook ones are undirected. In the
+Twitter network, we have linked users to other users whose posts they have
+retweeted, whereas in the Facebook network there is an edge between all the
+users that were active around a post. Moreover, we have analysed the Facebook
+network during certain periods of time, that have marked different release dates
+of the two movies. Another difference would be that The Interview Twitter
+network seems "younger" than The Hobbit's: the hubs and the authorities are not
+yet well defined and the graph is rather sparse - there aren't many users who
+have retweeted more than one post. Regarding the Facebook networks of the two
+movies, The Hobbit has more users liking and commenting on their posts,
+especially around the US release, while The Interview network is smaller and
+doesn't change much in time.
 %
 \end{document}
