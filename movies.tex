@@ -1,6 +1,7 @@
 \documentclass{llncs}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage{multirow}
 \graphicspath{ {images/} }
 \setlength{\tabcolsep}{20pt}
 \begin{document}
@@ -105,7 +106,7 @@ the networks, we have used \href{https://gephi.org/}{Gephi}.
 \subsection{The Interview - the Twitter Network}
 \subsubsection{Raw Results}
 \begin{center}
-    \begin{tabular}{ l | l }
+    \begin{tabular}{ l | c }
         \hline
         \textit{Metric} & \textit{Value} \\ \hline
         Network Type & Directed \\ \hline
@@ -119,19 +120,20 @@ the networks, we have used \href{https://gephi.org/}{Gephi}.
     \end{tabular}
 \end{center}
 %
-\subsubsection{Visual Representation}
+\subsubsection{Betweenness Centrality}
 We have used the
 \href{https://en.wikipedia.org/wiki/Force-directed_graph_drawing}{Fruchterman-Reingold
-lagorithm} in order to produce a nice visual network of all the data we have
+algorithm} in order to produce a nice visual network of all the data we have
 gathered from Twitter. Then, we have enlarged the nodes with the highest
-betweenness centrality in the undirected network (Fig. 1). This measures how often a node
-appears on shortest paths between other nodes in the network, in other words
-this highlights the Twitter users that have the greatest number of retweets or
-the Twitter users that get their tweets retweeted in cascade. We can easily
-notice how certain areas are denser than others - these are popular tweets that
-have been retweeted by many other users, so the central node points to many
-other nodes. There are many people who have retweeted one popular tweet, but
-there aren't many people who have retweeted many popular tweets.
+betweenness centrality in the undirected network
+(\ref{fig:interview-twitter-betweennes-centrality}). This measures how often a
+node appears on shortest paths between other nodes in the network, in other
+words this highlights the Twitter users that have the greatest number of
+retweets or the Twitter users that get their tweets retweeted in cascade. We can
+easily notice how certain areas are denser than others - these are popular
+tweets that have been retweeted by many other users, so the central node points
+to many other nodes. There are many people who have retweeted one popular tweet,
+but there aren't many people who have retweeted many popular tweets.
 
 Unsurprisingly, the nodes with the greatest betweenness centrality correspond to
 users like Seth Rogen and James Franco (who play the main characters in the
@@ -145,7 +147,139 @@ American magazine).
 \centering
 \includegraphics[width=0.6\textwidth]{interview-twitter-betweennes-centrality.png}
 \caption{Highest betweenness centrality in the Fruchterman-Reingold layout for
-the Twitter network of The Interview}
+the Twitter network of The Interview
+\label{fig:interview-twitter-betweennes-centrality}}
 \end{figure}
+%
+\subsubsection{Communities in the Network}
+A community on Twitter could be
+defined as a set of users that have more links within the set than outside of
+it, in other words, users that share quite similar views or prefer similar
+tweets and therefore, retweet them. Figure
+\ref{fig:interview-twitter-communities} shows the network colored based
+on different communities and the users with the highest numbers of followers
+have been enlarged. These results have been yielded when determining communities
+with a 20.0 modularity (we wanted to highlight only the most important
+communities).
+%
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{interview-twitter-communities.png}
+\caption{Communities in the Fruchterman-Reingold layout for the Twitter network
+    of The Interview
+\label{fig:interview-twitter-communities}}
+\end{figure}
+%
+We can see from these layouts that the communities are rather fuzzy and
+intertwined, but a very important thing that can be deducted is the fact that
+one or more users with a huge number of followers (influential users) are part
+of each of the biggest communities highlighted (the pink, the blue or the green
+community). Moreover, we can now clearly see how the ideas are spread from one
+small group to the other: there are users that retweet one tweet in their small
+group; one of the retweeters also gets retweeted by one other user, which then
+gets retweeted by many other users in his/her small group. This is, in fact, the
+way the Twitter network functions.
+%
+\subsection{The Interview - the Facebook Network}
+\subsubsection{Raw Results}
+\begin{center}
+    \begin{tabular}{ l | c | c }
+        \hline
+        \textit{Metric} & \textit{Network} & \textit{Value} \\ \hline
+        \multirow{3}{*}{Network Type} & 12/11-12/2014 & Undirected \\
+                                      & 12/24/2014 & Undirected \\
+                                      & 12/25-25/2014 & Undirected \\ \hline
+        \multirow{3}{*}{Number of Nodes} & 12/11-12/2014 & 301 \\
+                                      & 12/24/2014 & 263 \\
+                                      & 12/25-25/2014 & 388 \\ \hline
+        \multirow{3}{*}{Number of Nodes} & 12/11-12/2014 & 301 \\
+                                      & 12/24/2014 & 263 \\
+                                      & 12/25-25/2014 & 388 \\ \hline
+        \multirow{3}{*}{Number of Edges} & 12/11-12/2014 & 7 742 \\
+                                      & 12/24/2014 & 6 689 \\
+                                      & 12/25-25/2014 & 10 609 \\ \hline
+        \multirow{3}{*}{Average Degree} & 12/11-12/2014 & 51.442 \\
+                                      & 12/24/2014 & 50.87 \\
+                                      & 12/25-25/2014 & 54.686 \\ \hline
+        \multirow{3}{*}{Network Density} & 12/11-12/2014 & 0.171 \\
+                                      & 12/24/2014 & 0.194 \\
+                                      & 12/25-25/2014 & 0.141 \\ \hline
+        \multirow{3}{*}{Diameter} & 12/11-12/2014 & 4 \\
+                                      & 12/24/2014 & 2 \\
+                                      & 12/25-25/2014 & 4 \\ \hline
+        \multirow{3}{*}{Connected Components} & 12/11-12/2014 & 1 \\
+                                      & 12/24/2014 & 3 \\
+                                      & 12/25-25/2014 & 2 \\ \hline
+    \end{tabular}
+\end{center}
+%
+\subsubsection{Betweenness Centrality}
+We have used the
+\href{https://en.wikipedia.org/wiki/Force-directed_graph_drawing}{Fruchterman-Reingold
+algorithm} in order to produce a nice visual network of all the data we have
+gathered from Twitter. Then, we have enlarged the nodes with the highest
+betweenness centrality in the undirected network
+(\ref{fig:interview-facebook-betweennes-centrality}). For the Facebook network
+this shows the users that have liked or commented on more than one post in the
+same day, so users who are “brokers” between two or more clusters in the
+network.
+
+One can easily notice that there is no major difference between the three
+instances of the network. In all cases, there are users who have liked more than
+one post and users who have liked only one, so the bigger nodes represent
+“brokers” between the communities that have formed around each post.
+%
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{interview-facebook-betweennes-centrality.jpg}
+\caption{Highest betweenness centrality in the Fruchterman-Reingold layout for
+    the Facebook network of The Interview
+\label{fig:interview-facebook-betweennes-centrality}}
+\end{figure}
+%
+\subsubsection{Communities in the Network}
+A community on the Facebook page of the movie could be defined as a set of users
+that have liked or shared one or more similar posts. Figure
+\ref{fig:interview-facebook-communities} shows the
+network colored based on different communities and the users with the highest
+betweenness centrality have been enlarged. These results have been yielded when
+determining communities with a 1.0 modularity.
+%
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{interview-facebook-communities.png}
+\caption{Communities in the Fruchterman-Reingold layout for the Facebook network
+    of The Interview
+\label{fig:interview-facebook-communities}}
+\end{figure}
+%
+We can see from these layouts that the communities are very well defined and
+very well separated from one another. It would make sense to assume that one
+user who has liked the Facebook page of the movie and has then liked or
+commented on a post, has maybe received the post on their timeline or has
+browsed through the page's previous posts. It would also make sense to assume
+that someone who has liked one post might have liked at least another one, but
+if we look at the diagrams, it is clear that there aren't many users who have
+done this (there aren't many brokers in the network). This could be the
+consequence of the manner in which the Facebook timeline shows the posts (it
+doesn't often show two updates of the same page in a row) or simply because one
+page cannot publish that many important notes per day (or during a two-day
+timeline).
+%
+\subsubsection{Connected Components}
+The connected components are displayed in figure
+\ref{fig:interview-facebook-cc}. The network obtained between the 11th and the
+12th presents only one connected component. This might suggest that the page's
+posts were all very interesting and/or important, so there were people who have
+liked or commented on more than one.
+%
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{interview-facebook-cc.png}
+\caption{Connected components in the Fruchterman-Reingold layout for the
+    Facebook network of The Interview
+\label{fig:interview-facebook-cc}}
+\end{figure}
+%
 %
 \end{document}
