@@ -1,5 +1,6 @@
 \documentclass{llncs}
 \usepackage{hyperref}
+\setlength{\tabcolsep}{20pt}
 \begin{document}
 \title{Comparison between the Twitter Search Network and Facebook Like/Comment
 Network for two Movies: The Hobbit and The Interview}
@@ -33,7 +34,7 @@ commenting on their posts, especially around the US release, while The Interview
 network is smaller and doesn't change much in time.
 \end{abstract}
 %
-\section{Collecting the data}
+\section{Collecting the Data}
 In order to collect the necessary data for our study, we first tried to use
 popular data retrieving tools, such as Wolfram Mathematica, NameGenWeb or Social
 Network Importer for Node XL, but due to some Twitter
@@ -71,9 +72,49 @@ information as follows:
         the USA.
     \end{enumerate}
 \end{enumerate}
+
 In the resulting \href{http://graphml.graphdrawing.org/}{graphml} files, we have
 created a node for each user that has liked a post or commented on a post on the
 specific Facebook page. We then added an edge between each user who has
 liked/commented on posts on the page.
 %
+\section{Facebook and Twitter Network Analysis}
+In this part we are going to analyse the four networks formed with the data we
+have retrieved as presented in the previous part.
+%
+\subsection{The Network Structure}
+The two Facebook networks were taken from the official Facebook pages of the two
+movies, The Hobbit and The Interview. Each node represents a user and the
+links between two users are formed when both have liked or commented on the same
+post made by the page. Therefore, this is an undirected network.
+
+The two Twitter networks were formed from the search results using the queries
+"the hobbit" and "the interview". We have considered the most popular posts,
+i.e. the "trending topics". We have added a node to the network for each user
+that has either posted or retweeted a post and then added a directed edge from
+the user that has authored the tweet (the source) to the user that has retweeted
+it (the target). Therefore, this is a directed network.
+
+In this section we will analyse the four networks by interpreting the visual
+layouts (the graph representation) and by combining certain metrics so as to
+obtain a mathematical insight into the data.
+%
+\subsection{The Interview - the Twitter Network}
+\subsubsection{Raw Results}
+\begin{center}
+    \begin{tabular}{ l | l }
+        \hline
+        \textit{Metric} & \textit{Value} \\ \hline
+        Network Type & Directed \\ \hline
+        Number of Nodes & 7 872 \\ \hline
+        Number of Edges & 8 152 \\ \hline
+        Average Degree & 1.036 \\ \hline
+        Network Density & 0 \\ \hline
+        Diameter & 2 \\ \hline
+        Connected Components & 13 \\
+        \hline
+    \end{tabular}
+\end{center}
+%
+
 \end{document}
