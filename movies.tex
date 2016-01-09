@@ -43,6 +43,37 @@ use of the \href{https://github.com/bear/python-twitter}{Bear Python-Twitter
 API}, an open-source library that provides a "pure Python interface for the
 \href{https://dev.twitter.com/rest/public}{Twitter API}" and
 \href{http://nodexl.codeplex.com/}{Node XL} 1.9.2 for
-the Facebook queries.
+the Facebook queries. Due to the afore mentioned Twitter rate limitations, we
+were able to query posts from 12/22/2014 to 12/29/2014 only for both movies (as
+work on this project has been carried out between December 30 and 31st 2014).
+Tweets can be either recent, popular or mixed, but we queried only the
+popular tweets, as it would get us data about more influential users. We then
+queried for the retweeters of each of the popular tweets. We collected the data
+in a \href{https://gephi.org/users/supported-graph-formats/gdf-format/}{gdf file
+format} and created a node for each user that has retweeted a popular tweet and
+a node for each user that authored a popular tweet. We then added an edge
+between each user who has retweeted a tweet and each user that had authored the
+specific tweet. The Facebook data was easier to collect and we gathered
+information as follows:
+\begin{enumerate}
+\item for The Hobbit we collected data from between:
+    \begin{enumerate}
+    \item 12/01/2014-12/02/2014, which marked the release dates in the UK and
+        France for the London and Paris premieres;
+    \item 12/04/2014-12/09/2014, which marked the release dates in the USA for
+        the New York and Los Angeles premieres;
+    \end{enumerate}
+\item for The Interview we collected data from between:
+    \begin{enumerate}
+    \item 12/11/2014, which marked the Los Angeles premiere in the USA;
+    \item 12/24/2014, which marked the internet release in the USA;
+    \item 12/25/2014-12/26/2014, which marked the release date in the rest of
+        the USA.
+    \end{enumerate}
+\end{enumerate}
+In the resulting \href{http://graphml.graphdrawing.org/}{graphml} files, we have
+created a node for each user that has liked a post or commented on a post on the
+specific Facebook page. We then added an edge between each user who has
+liked/commented on posts on the page.
 %
 \end{document}
