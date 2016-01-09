@@ -1,5 +1,7 @@
 \documentclass{llncs}
 \usepackage{hyperref}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
 \setlength{\tabcolsep}{20pt}
 \begin{document}
 \title{Comparison between the Twitter Search Network and Facebook Like/Comment
@@ -97,7 +99,8 @@ it (the target). Therefore, this is a directed network.
 
 In this section we will analyse the four networks by interpreting the visual
 layouts (the graph representation) and by combining certain metrics so as to
-obtain a mathematical insight into the data.
+obtain a mathematical insight into the data. For the visual representation of
+the networks, we have used \href{https://gephi.org/}{Gephi}.
 %
 \subsection{The Interview - the Twitter Network}
 \subsubsection{Raw Results}
@@ -116,5 +119,33 @@ obtain a mathematical insight into the data.
     \end{tabular}
 \end{center}
 %
+\subsubsection{Visual Representation}
+We have used the
+\href{https://en.wikipedia.org/wiki/Force-directed_graph_drawing}{Fruchterman-Reingold
+lagorithm} in order to produce a nice visual network of all the data we have
+gathered from Twitter. Then, we have enlarged the nodes with the highest
+betweenness centrality in the undirected network (Fig. 1). This measures how often a node
+appears on shortest paths between other nodes in the network, in other words
+this highlights the Twitter users that have the greatest number of retweets or
+the Twitter users that get their tweets retweeted in cascade. We can easily
+notice how certain areas are denser than others - these are popular tweets that
+have been retweeted by many other users, so the central node points to many
+other nodes. There are many people who have retweeted one popular tweet, but
+there aren't many people who have retweeted many popular tweets.
 
+Unsurprisingly, the nodes with the greatest betweenness centrality correspond to
+users like Seth Rogen and James Franco (who play the main characters in the
+movie), The Interview (the official Twitter user of the movie),
+\href{http://en.wikipedia.org/wiki/The_Hollywood_Reporter}{Hollywood Reporter} (
+an American media publication) or
+\href{http://en.wikipedia.org/wiki/Variety_%28magazine%29 }{Variety}, (an
+American magazine).
+%
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{interview-twitter-betweennes-centrality.png}
+\caption{Highest betweenness centrality in the Fruchterman-Reingold layout for
+the Twitter network of The Interview}
+\end{figure}
+%
 \end{document}
