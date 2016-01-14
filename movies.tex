@@ -431,26 +431,31 @@ connected components, whereas the second one contains only two.
 %
 \section{Conclusions}
 The analysis of the four networks was based on data collected from the Facebook
-and Twitter social web pages. However much we have strived, we could not import
-all the data we desired to, due to the limitations of the existing tools and
-APIs. Therefore, the graphs we have obtained are smaller than in reality. We
-tried as much as possible to improve the quality of the data, by querying the
-most popular tweets on Twitter and retrieving data from the release days on
-Facebook.
+and Twitter social web pages. Using free services and collecting the data
+between the previously mentioned dates has lead to less relevant information
+than we would have desired. Therefore, the graphs we have obtained are smaller
+than in reality. We have improved the quality of the data, by querying the most
+popular tweets on Twitter and retrieving data from the release days on Facebook.
 
 There are several differences between the networks we have analysed and we have
-highlighted these in the previous paragraphs. The most important would be: while
-the Twitter networks are directed, the Facebook ones are undirected. In the
-Twitter network, we have linked users to other users whose posts they have
-retweeted, whereas in the Facebook network there is an edge between all the
-users that were active around a post. Moreover, we have analysed the Facebook
-network during certain periods of time, that have marked different release dates
-of the two movies. Another difference would be that The Interview Twitter
-network seems "younger" than The Hobbit's: the hubs and the authorities are not
-yet well defined and the graph is rather sparse - there aren't many users who
-have retweeted more than one post. Regarding the Facebook networks of the two
-movies, The Hobbit has more users liking and commenting on their posts,
-especially around the US release, while The Interview network is smaller and
-doesn't change much in time.
+highlighted these in the previous paragraphs. The most important would be:
+\begin{enumerate}
+\item network structure - While the Twitter networks are directed, the Facebook
+    ones are undirected. In the Twitter network, we have linked users to other
+    users whose posts they have retweeted, whereas in the Facebook network there
+    is an edge between all the users that were active around a post.
+\item data range - We have analysed the Facebook network during three different
+    periods of time and with different time span for the two movies. Data for
+    the Twitter networks has been gathered over the time span of one week and is
+    not directly related to the release dates of the movies (this is due to the
+    rate limitations).
+\item network analysis - The Interview Twitter network seems "younger" than The
+    Hobbit's: the hubs and the authorities are not yet well defined and the
+    graph is rather sparse - there aren't many users who have retweeted more
+    than one post. Regarding the Facebook networks of the two movies, The Hobbit
+    has more users liking and commenting on their posts, especially around the
+    US release, while The Interview network is smaller and doesn't change much
+    in time.
+\end{enumerate}
 %
 \end{document}
